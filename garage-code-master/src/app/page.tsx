@@ -11,8 +11,8 @@ export default function HomePage() {
   return (
     <main>
       <div className="mainBG">
-      <Header />
-      <Hero />
+        <Header />
+        <Hero />
       </div>
       <Process />
       <Courses />
