@@ -1,3 +1,32 @@
+import ReviewCard from "./ReviewCard";
+
+const REVIEWS = [
+  {
+    avatar: "/img/review-1.jpg",
+    name: "Аслан",
+    role: "Front-End",
+    text: "Моё первое впечатление о программировании было бы не самым лучшим, если бы не этот преподаватель.",
+  },
+  {
+    avatar: "/img/review-2.jpg",
+    name: "Дени",
+    role: "Front-End",
+    text: "Они внесли важный вклад в мое образование и развитие",
+  },
+  {
+    avatar: "/img/review-3.jpg",
+    name: "Асхаб",
+    role: "Front-End",
+    text: "Преподаватели оказались очень квалифицированными специалистами, всегда готовыми помочь и объяснить сложные моменты",
+  },
+  {
+    avatar: "/img/review-4.jpg",
+    name: "Дени",
+    role: "Front-End",
+    text: "Пройти эти курсы было лучшим решением в моей жизни",
+  },
+];
+
 export default function Reviews() {
   return (
     <section className="w-full flex flex-col items-center py-[4.2vw]">
@@ -6,20 +35,18 @@ export default function Reviews() {
         Отзывы
       </h2>
 
-      {/* Cards wrapper — ТУТ ТЫ СДЕЛАЕШЬ 3D + SCROLL */}
+      {/* Cards */}
       <div
         className="
           w-full
           max-w-[69.6vw]
           flex
-          gap-[1.25vw]
+          justify-between
         "
       >
-        {/* Review card placeholder */}
-        <div className="w-[16.7vw] h-[8.3vw] bg-white border border-[#DEE2E6] rounded-[1.04vw]" />
-        <div className="w-[16.7vw] h-[8.3vw] bg-white border border-[#DEE2E6] rounded-[1.04vw]" />
-        <div className="w-[16.7vw] h-[8.3vw] bg-white border border-[#DEE2E6] rounded-[1.04vw]" />
-        <div className="w-[16.7vw] h-[8.3vw] bg-white border border-[#DEE2E6] rounded-[1.04vw]" />
+        {REVIEWS.map((review, i) => (
+          <ReviewCard key={i} {...review} />
+        ))}
       </div>
 
     </section>
